@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотогалерея — Gold Olive (Измир, Турция)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="container header-row">
+        <a class="logo" href="index.html" aria-label="Gold Olive — на главную">
+            Gold Olive
+        </a>
+        
+        <nav id="menu" aria-label="Основная навигация">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О компании</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="gallery.html" class="active">Галерея</a>
+            <a href="country.html">Турция</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="small-btn" onclick="toggleTheme()" type="button" aria-label="Переключить тему оформления">Тема</button>
+            <button class="small-btn burger" onclick="toggleMenu()" type="button" aria-label="Открыть навигационное меню" aria-expanded="false">Меню</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section>
+        <div class="container">
+            <div class="section-title-wrap">
+                <h1>Фотогалерея производства</h1>
+                <p class="lead">Реальные кадры сбора оливок в рощах Измира, механического холодного отжима на мануфактуре и дегустации свежего масла Gold Olive.</p>
+            </div>
+            
+            <div class="gallery">
+                <div class="gallery-item" onclick="openLightbox(0)" tabindex="0" role="button" aria-label="Увеличить фото: Оливковые рощи в лучах утреннего солнца в районе Измира" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(0)">
+                    <img src="img/hero.jpg" alt="Оливковые рощи в лучах утреннего солнца в районе Измира">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)" tabindex="0" role="button" aria-label="Увеличить фото: Традиционный ручной сбор спелых оливок в саду" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(1)">
+                    <img src="img/harvest.jpg" alt="Традиционный ручной сбор спелых оливок в саду">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)" tabindex="0" role="button" aria-label="Увеличить фото: Свежее оливковое масло, наливаемое на ломоть хрустящего хлеба" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(2)">
+                    <img src="img/gallery_bread_oil.jpg" alt="Свежее оливковое масло, наливаемое на ломоть хрустящего хлеба">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)" tabindex="0" role="button" aria-label="Увеличить фото: Дегустация свежего оливкового масла деревянной ложкой над керамической пиалой" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(3)">
+                    <img src="img/gallery_spoon_tasting.jpg" alt="Дегустация свежего оливкового масла деревянной ложкой над керамической пиалой">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)" tabindex="0" role="button" aria-label="Увеличить фото: Раскладка сборочных сетей под вековыми оливковыми деревьями" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(4)">
+                    <img src="img/gallery_harvest_net.jpg" alt="Раскладка сборочных сетей под вековыми оливковыми деревьями">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)" tabindex="0" role="button" aria-label="Увеличить фото: Созревающие зелёные оливки на ветвях деревьев в лучах солнца" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(5)">
+                    <img src="img/gallery_branch_olives.jpg" alt="Созревающие зелёные оливки на ветвях деревьев в лучах солнца">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(6)" tabindex="0" role="button" aria-label="Увеличить фото: Бережная высадка молодого оливкового саженца в плодородную почву" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(6)">
+                    <img src="img/gallery_planting_sapling.jpg" alt="Бережная высадка молодого оливкового саженца в плодородную почву">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(7)" tabindex="0" role="button" aria-label="Увеличить фото: Проверка свежесобранных оливок в деревянном ящике перед холодным отжимом" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(7)">
+                    <img src="img/gallery_crate_inspect.jpg" alt="Проверка свежесобранных оливок в деревянном ящике перед холодным отжимом">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(8)" tabindex="0" role="button" aria-label="Увеличить фото: Живописные оливковые сады на холмах у подножия горных хребтов" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(8)">
+                    <img src="img/gallery_mountain_groves.jpg" alt="Живописные оливковые сады на холмах у подножия горных хребтов">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(9)" tabindex="0" role="button" aria-label="Увеличить фото: Сортировочные ящики со свежесобранными зелёными и спелыми оливками" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(9)">
+                    <img src="img/gallery_harvest_crates.jpg" alt="Сортировочные ящики со свежесобранными зелёными и спелыми оливками">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(10)" tabindex="0" role="button" aria-label="Увеличить фото: Пригоршня отборных свежесобранных оливок в руках садовода" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(10)">
+                    <img src="img/gallery_farmer_hands.jpg" alt="Пригоршня отборных свежесобранных оливок в руках садовода">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(11)" tabindex="0" role="button" aria-label="Увеличить фото: Вековые оливковые сады у подножия горных склонов" onkeydown="if(event.key==='Enter'||event.key===' ')openLightbox(11)">
+                    <img src="img/mountain_grove.jpg" alt="Вековые оливковые сады у подножия горных склонов">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+        <div class="lightbox-content">
+            <img id="bigImage" src="" alt="Увеличенное изображение">
+            <div class="lightbox-controls">
+                <button onclick="prevImage()" type="button" aria-label="Предыдущее фото">Назад</button>
+                <button onclick="nextImage()" type="button" aria-label="Следующее фото">Вперёд</button>
+                <button onclick="closeLightbox()" type="button" aria-label="Закрыть модальное окно">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-row">
+            <div class="footer-brand">
+                <b>Gold Olive</b>
+                <p>Производство и поставка натурального оливкового масла из региона Измир, Турция. Традиции отжима с 2019 года.</p>
+            </div>
+            <div class="footer-contacts">
+                <p><b>Локация:</b> Измир, Турция</p>
+                <p><b>Электронная почта:</b> info@gold-olive.com</p>
+                <p><b>Телефон отдела заботы:</b> +90 232 000 00 00</p>
+                <p><b>Режим работы:</b> Пн-Пт 9:00-18:00 (TRT)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Gold Olive. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<button id="topBtn" class="to-top" onclick="toTop()" type="button" aria-label="Вернуться в начало страницы"></button>
+<script src="js/main.js"></script>
+
+</body>
+</html>

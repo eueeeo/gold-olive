@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Olive — Натуральное оливковое масло из Турции (Измир)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="container header-row">
+        <a class="logo" href="index.html" aria-label="Gold Olive — на главную">
+            Gold Olive
+        </a>
+        
+        <nav id="menu" aria-label="Основная навигация">
+            <a href="index.html" class="active">Главная</a>
+            <a href="about.html">О компании</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="country.html">Турция</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="small-btn" onclick="toggleTheme()" type="button" aria-label="Переключить тему оформления">Тема</button>
+            <button class="small-btn burger" onclick="toggleMenu()" type="button" aria-label="Открыть навигационное меню" aria-expanded="false">Меню</button>
+        </div>
+    </div>
+</header>
+
+<main>
+        <section class="hero-fullwidth">
+        <div class="hero-fullwidth-overlay">
+            <div class="container">
+                <div class="hero-fullwidth-content">
+                    <span class="hero-fullwidth-tag">Семейное производство, регион Измир</span>
+                    <h1>Натуральное оливковое масло из Турции</h1>
+                    <p>Первый холодный отжим Extra Virgin из свежих оливок сортов Айвалык и Мемджик. Сохраняем природный аромат, антиоксиданты и насыщенный вкус.</p>
+                    <div class="hero-fullwidth-actions">
+                        <a class="btn" href="catalog.html">Смотреть каталог</a>
+                        <a class="btn btn-hero-outline" href="about.html">О производстве</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section>
+        <div class="container grid-2">
+            <div class="story-box">
+                <h2>Живой продукт прямо из оливкового сада</h2>
+                <p>В окрестностях Измира оливковые деревья растут на известняковых каменистых склонах, обдуваемых влажными ветрами Эгейского моря. Здесь деревья не поливают искусственно: корни уходят на глубину до десяти метров в поисках влаги и минералов, благодаря чему масло приобретает плотную текстуру и глубокий травяной аромат.</p>
+                <p>Мы не закупаем масло на оптовых торгах и не смешиваем урожаи разных сезонов. В каждой бутылке Gold Olive — свежий чистый сок оливок одного осеннего сбора.</p>
+                
+                <blockquote class="artisan-quote">
+                    «Настоящее свежее масло должно оставлять мягкое перечное покалывание в горле — это природный признак полифенолов и олеокантала. Если масло абсолютно нейтральное на вкус, оно либо выдохлось, либо подвергалось термической рафинации.»
+                    <cite>— Айше Демир, главный технолог Gold Olive</cite>
+                </blockquote>
+            </div>
+            <div>
+                <img class="simple-img" src="img/harvest.jpg" alt="Свежесобранные отборные спелые оливки в корзине">
+            </div>
+        </div>
+    </section>
+
+        <section>
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2>Три правила нашего производства</h2>
+                <p class="lead">Контролируем каждый шаг — от цветения рощ до розлива в светонепроницаемую тару.</p>
+            </div>
+            <div class="process-row">
+                <article class="process-step">
+                    <h3>Ручной сбор на рассвете</h3>
+                    <p>Стряхиваем оливки специальными гребнями на чистые натянутые сети, исключая падение плодов на землю и повреждение кожицы.</p>
+                </article>
+                <article class="process-step">
+                    <h3>Пресс в течение 4 часов</h3>
+                    <p>Окисление сырья начинается сразу после сбора. Мы доставляем урожай на пресс немедленно, сохраняя минимальную кислотность плодов.</p>
+                </article>
+                <article class="process-step">
+                    <h3>Холодный механический отжим</h3>
+                    <p>Только гравитационная центрифуга при температуре строго до 27°C. Без пара, без химических растворителей и фильтрации.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+        <section>
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2>Сорта оливкового масла</h2>
+                <p class="lead">Каждая позиция разливается в тару, защищающую масло от ультрафиолета и окисления.</p>
+            </div>
+            <div class="grid-3">
+                <article class="card product" data-type="classic">
+                    <span class="product-tag">Стеклянная бутылка, 0.5 л</span>
+                    <div class="product-img"><img src="img/core3.png" alt="Оливковое масло Сиена с пряными травами 0.5 л в стеклянной бутылке"></div>
+                    <h3>Сиена с пряными травами 0.5 л</h3>
+                    <p>Сбалансированный сорт с выразительным травянистым ароматом. Идеально для заправки спелых томатов и брускетт.</p>
+                    <div class="product-footer">
+                        <span class="price">₺210</span>
+                        <button onclick="orderProduct('Сиена с пряными травами 0.5 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="family">
+                    <span class="product-tag">Семейная канистра, 5 л</span>
+                    <div class="product-img"><img src="img/family1.png" alt="Семейная жестяная канистра Ранний урожай 5 л"></div>
+                    <h3>Ранний урожай канистра 5 л</h3>
+                    <p>Большой экономичный объём раннего осеннего сбора. Пищевая жесть на 100% защищает масло от солнечного света.</p>
+                    <div class="product-footer">
+                        <span class="price">₺690</span>
+                        <button onclick="orderProduct('Ранний урожай канистра 5 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="gift">
+                    <span class="product-tag">Подарочный бокс</span>
+                    <div class="product-img"><img src="img/gift2.png" alt="Подарочный бокс трёх вкусов"></div>
+                    <h3>Подарочный бокс трёх вкусов</h3>
+                    <p>Три авторских сорта разной степени зрелости оливок в презентабельной коробке. Прекрасный гастрономический подарок.</p>
+                    <div class="product-footer">
+                        <span class="price">₺420</span>
+                        <button onclick="orderProduct('Подарочный бокс трёх вкусов')" type="button">Заказать</button>
+                    </div>
+                </article>
+            </div>
+
+                        <div class="guarantee-strip">
+                <div class="guarantee-item">
+                    <div>
+                        <b>Бережная доставка</b>
+                        <span>Надёжная многослойная упаковка в плотный крафт с фиксацией тары.</span>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div>
+                        <b>Контроль кислотности</b>
+                        <span>Каждая партия сертифицирована. Кислотность урожая 2026: 0.38%.</span>
+                    </div>
+                </div>
+                <div class="guarantee-item">
+                    <div>
+                        <b>Прямо из рощи</b>
+                        <span>Отправка партий напрямую с нашего склада в Измире без посредников.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-row">
+            <div class="footer-brand">
+                <b>Gold Olive</b>
+                <p>Производство и поставка натурального оливкового масла из региона Измир, Турция. Традиции отжима с 2019 года.</p>
+            </div>
+            <div class="footer-contacts">
+                <p><b>Локация:</b> Измир, Турция</p>
+                <p><b>Электронная почта:</b> info@gold-olive.com</p>
+                <p><b>Телефон отдела заботы:</b> +90 232 000 00 00</p>
+                <p><b>Режим работы:</b> Пн-Пт 9:00-18:00 (TRT)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Gold Olive. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<button id="topBtn" class="to-top" onclick="toTop()" type="button" aria-label="Вернуться в начало страницы"></button>
+<script src="js/main.js"></script>
+
+</body>
+</html>

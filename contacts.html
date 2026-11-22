@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа и контакты — Gold Olive (Измир, Турция)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="container header-row">
+        <a class="logo" href="index.html" aria-label="Gold Olive — на главную">
+            Gold Olive
+        </a>
+        
+        <nav id="menu" aria-label="Основная навигация">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О компании</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="country.html">Турция</a>
+            <a href="contacts.html" class="active">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="small-btn" onclick="toggleTheme()" type="button" aria-label="Переключить тему оформления">Тема</button>
+            <button class="small-btn burger" onclick="toggleMenu()" type="button" aria-label="Открыть навигационное меню" aria-expanded="false">Меню</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="contacts-intro">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h1>Оформление заказа и контакты</h1>
+                <p class="lead">Прямые поставки натурального оливкового масла первого холодного отжима из Измира. Проверьте состав заказа, заполните адрес доставки или свяжитесь с нашим офисом.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="checkout-section">
+        <div class="container">
+            <div class="checkout-layout">
+                <div class="checkout-form-panel">
+                    <form onsubmit="return sendOrder()">
+                        <select id="product" style="display: none;">
+                            <option value="">Выберите сорт масла из каталога</option>
+                            <option value="Классическое в стекле 0.5 л">Классическое в стекле 0.5 л (₺180)</option>
+                            <option value="Мягкое традиционное 0.5 л">Мягкое традиционное 0.5 л (₺190)</option>
+                            <option value="Сиена с пряными травами 0.5 л">Сиена с пряными травами 0.5 л (₺210)</option>
+                            <option value="Зелёный сбор ранний 0.5 л">Зелёный сбор ранний 0.5 л (₺220)</option>
+                            <option value="Ранний урожай канистра 5 л">Ранний урожай канистра 5 л (₺690)</option>
+                            <option value="Сызма нефильтрованное 2.5 л">Сызма нефильтрованное 2.5 л (₺430)</option>
+                            <option value="Ривьера в боксе с краном 3 л">Ривьера в боксе с краном 3 л (₺470)</option>
+                            <option value="Дегустационный мини-сет">Дегустационный мини-сет (₺350)</option>
+                            <option value="Набор в деревянной шкатулке">Набор в деревянной шкатулке (₺590)</option>
+                            <option value="Подарочный бокс трёх вкусов">Подарочный бокс трёх вкусов (₺420)</option>
+                            <option value="Премиальная стеклянная бутылка">Премиальная стеклянная бутылка (₺480)</option>
+                        </select>
+
+                        <div class="checkout-block">
+                            <h2>1. Контактные данные</h2>
+                            <div class="grid-2">
+                                <label>Ваше имя
+                                    <input id="orderName" type="text" autocomplete="name" placeholder="Например, Александр">
+                                </label>
+                                <label>Номер телефона
+                                    <input id="orderPhone" type="tel" autocomplete="tel" placeholder="+90 ... или +7 ...">
+                                </label>
+                            </div>
+                            <label>Электронная почта
+                                <input id="orderEmail" type="email" autocomplete="email" placeholder="example@mail.com">
+                            </label>
+                        </div>
+
+                        <div class="checkout-block">
+                            <h2>2. Доставка</h2>
+                            <label>Город и адрес доставки
+                                <input id="orderAddress" type="text" autocomplete="street-address" placeholder="Город, улица, дом или пункт выдачи">
+                            </label>
+                        </div>
+
+                        <div class="checkout-block">
+                            <h2>3. Оплата</h2>
+                            <div class="payment-card">
+                                <div class="payment-radio-bullet"></div>
+                                <div>
+                                    <b>Оплата при получении заказа</b>
+                                    <p>Оплата наличными или банковской картой курьеру после проверки целостности упаковки.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-order-submit" type="submit">Оформить заказ</button>
+                        <div id="orderMsg" class="message"></div>
+                    </form>
+                </div>
+
+                <aside class="checkout-summary-panel">
+                    <div class="summary-card">
+                        <div class="summary-card-header">
+                            <h2>Ваш заказ</h2>
+                            <a href="catalog.html" class="summary-catalog-link">+ Из каталога</a>
+                        </div>
+
+                        <div id="orderCart" class="order-cart"></div>
+
+                        <div class="summary-assurance">
+                            <p><b>Гарантия свежести:</b> прямой розлив из рощ Измира, кислотность партии до 0.4%.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section id="office" class="contacts-info-section">
+        <div class="container grid-2">
+            <article class="card">
+                <h2>Офис и мануфактура</h2>
+                <p>Главная производственная площадка и логистический комплекс Gold Olive в Измире:</p>
+                <div class="office-details">
+                    <p><b>Локация:</b> Atatürk Organize Sanayi Bölgesi, Çiğli, İzmir, Türkiye</p>
+                    <p><b>Телефон отдела заботы:</b> <a href="tel:+902320000000">+90 232 000 00 00</a></p>
+                    <p><b>Электронная почта:</b> <a href="mailto:info@gold-olive.com">info@gold-olive.com</a></p>
+                    <p><b>Приём заказов и отгрузка:</b> Понедельник — Пятница, 9:00–18:00 (TRT)</p>
+                </div>
+                <div class="map-frame" style="margin-top: 18px;">
+                    <iframe src="https://maps.google.com/maps?q=Izmir%2C%20Turkey&t=&z=11&ie=UTF8&iwloc=&output=embed" title="Интерактивная карта расположения в регионе Измир, Турция"></iframe>
+                </div>
+            </article>
+
+            <article id="feedback" class="card">
+                <h2>Обратная связь</h2>
+                <p>Вопросы по оптовым закупкам для ресторанов, отелей, магазинов или уточнения по технологии производства:</p>
+                <form onsubmit="return sendContact()">
+                    <div class="grid-2">
+                        <label>Ваше имя
+                            <input id="contactName" type="text" autocomplete="name" placeholder="Как к вам обращаться">
+                        </label>
+                        <label>Номер телефона
+                            <input id="contactPhone" type="tel" autocomplete="tel" placeholder="Контактный телефон">
+                        </label>
+                    </div>
+                    <label>Электронная почта
+                        <input id="contactEmail" type="email" autocomplete="email" placeholder="Email для ответа">
+                    </label>
+                    <label>Текст сообщения
+                        <textarea id="contactMessage" placeholder="Опишите ваш вопрос, требуемый объём партии или пожелания к сотрудничеству..."></textarea>
+                    </label>
+                    <button class="btn" type="submit">Отправить сообщение</button>
+                    <div id="contactMsg" class="message"></div>
+                </form>
+            </article>
+        </div>
+    </section>
+
+    <section id="reviews" class="contacts-reviews-section">
+        <div class="container">
+            <div class="reviews-header-wrap">
+                <div>
+                    <h2>Отзывы покупателей</h2>
+                    <p class="lead">Мнения покупателей, которые заказывают масло Gold Olive для дома и подарков.</p>
+                </div>
+                <div class="reviews-rating-badge">
+                    <span>Оценка <strong>4.9</strong> из 5.0 (более 140 отзывов)</span>
+                </div>
+            </div>
+
+            <div id="reviewsList" class="reviews-grid"></div>
+
+            <div class="card review-form-card">
+                <h3>Оставить отзыв о продукции</h3>
+                <p class="review-form-desc">Поделитесь впечатлением о вкусе, аромате или скорости доставки. Отзыв появится на сайте сразу после отправки.</p>
+                <form onsubmit="return addReview()">
+                    <div class="grid-2">
+                        <label>Ваше имя и фамилия
+                            <input id="reviewName" type="text" placeholder="Например, Екатерина Смирнова">
+                        </label>
+                        <label>Ваш отзыв
+                            <textarea id="reviewText" placeholder="Поделитесь вашим впечатлением о вкусе, аромате или доставке..."></textarea>
+                        </label>
+                    </div>
+                    <button class="btn" type="submit" style="margin-top: 10px;">Опубликовать отзыв</button>
+                    <div id="reviewMsg" class="message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="contacts-faq-section">
+        <div class="container faq-container">
+            <div class="section-title-wrap">
+                <h2>Часто задаваемые вопросы</h2>
+                <p class="lead">Ответы на популярные вопросы о хранении, кислотности, доставке и стандартах качества масла Gold Olive.</p>
+            </div>
+            <div class="faq">
+                <article class="faq-item">
+                    <button class="faq-btn" onclick="showFaq(this)" type="button" aria-expanded="false">
+                        <span class="faq-title">Как правильно хранить оливковое масло после вскрытия бутылки?</span>
+                        <span class="faq-arrow" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Рекомендуем хранить масло в прохладном, сухом и защищённом от света шкафу при температуре 14–22°C. Не стоит ставить бутылку в холодильник (масло застывает и мутнеет) или возле кухонной плиты, где от тепла ускоряется окисление.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-btn" onclick="showFaq(this)" type="button" aria-expanded="false">
+                        <span class="faq-title">Какова кислотность вашего оливкового масла первого отжима?</span>
+                        <span class="faq-arrow" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Кислотность масла Gold Olive раннего сбора составляет всего 0.3%–0.5%, что вдвое ниже максимально допустимого порога стандарта Extra Virgin (до 0.8%). Чем ниже кислотность, тем свежее были оливки в момент холодного отжима.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-btn" onclick="showFaq(this)" type="button" aria-expanded="false">
+                        <span class="faq-title">Каковы сроки и география доставки?</span>
+                        <span class="faq-arrow" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Доставка по Турции занимает 1–2 рабочих дня. Международная доставка курьерскими службами занимает в среднем 3–7 рабочих дней с предоставлением трек-номера для отслеживания посылки.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-btn" onclick="showFaq(this)" type="button" aria-expanded="false">
+                        <span class="faq-title">В чём преимущество семейной жестяной канистры 5 л?</span>
+                        <span class="faq-arrow" aria-hidden="true"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Металлическая канистра обеспечивает 100% барьер от солнечного света и кислорода, сохраняя свежесть масла на протяжении всего срока годности. Выдвижной носик-дозатор позволяет аккуратно переливать масло в небольшие бутылки без брызг и подтёков.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-row">
+            <div class="footer-brand">
+                <b>Gold Olive</b>
+                <p>Производство и поставка натурального оливкового масла из региона Измир, Турция. Традиции отжима с 2019 года.</p>
+            </div>
+            <div class="footer-contacts">
+                <p><b>Локация:</b> Измир, Турция</p>
+                <p><b>Электронная почта:</b> info@gold-olive.com</p>
+                <p><b>Телефон отдела заботы:</b> +90 232 000 00 00</p>
+                <p><b>Режим работы:</b> Пн-Пт 9:00-18:00 (TRT)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Gold Olive. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<button id="topBtn" class="to-top" onclick="toTop()" type="button" aria-label="Вернуться в начало страницы"></button>
+<script src="js/main.js"></script>
+
+</body>
+</html>

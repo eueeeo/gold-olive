@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог продукции — Gold Olive (Измир, Турция)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="container header-row">
+        <a class="logo" href="index.html" aria-label="Gold Olive — на главную">
+            Gold Olive
+        </a>
+        
+        <nav id="menu" aria-label="Основная навигация">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О компании</a>
+            <a href="catalog.html" class="active">Каталог</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="country.html">Турция</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="small-btn" onclick="toggleTheme()" type="button" aria-label="Переключить тему оформления">Тема</button>
+            <button class="small-btn burger" onclick="toggleMenu()" type="button" aria-label="Открыть навигационное меню" aria-expanded="false">Меню</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section>
+        <div class="container">
+            <div class="section-title-wrap">
+                <h1>Каталог продукции</h1>
+                <p class="lead">Натуральное оливковое масло Extra Virgin первого холодного отжима. Нажмите «Заказать», чтобы перенести выбранный товар в форму заказа.</p>
+            </div>
+            
+            <div class="filter" role="group" aria-label="Фильтр по категориям продукции">
+                <button class="filter-btn active" onclick="filterCatalog('all', this)" type="button">Все товары</button>
+                <button class="filter-btn" onclick="filterCatalog('classic', this)" type="button">Классическое</button>
+                <button class="filter-btn" onclick="filterCatalog('family', this)" type="button">Семейный формат</button>
+                <button class="filter-btn" onclick="filterCatalog('gift', this)" type="button">Подарочные наборы</button>
+                <a class="filter-btn filter-order-btn" href="contacts.html#order">Оформить заказ</a>
+            </div>
+
+            <div class="products">
+                <article class="card product" data-type="classic">
+                    <span class="product-tag">Классическая серия, 0.5 л</span>
+                    <div class="product-img"><img src="img/core1.png" alt="Оливковое масло Классическое в стекле 0.5 л"></div>
+                    <h3>Классическое в стекле 0.5 л</h3>
+                    <p>Небольшая стеклянная бутылка для свежих салатов и закусок на каждый день.</p>
+                    <div class="product-footer">
+                        <span class="price">₺180</span>
+                        <button onclick="orderProduct('Классическое в стекле 0.5 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="classic">
+                    <span class="product-tag">Классическая серия, 0.5 л</span>
+                    <div class="product-img"><img src="img/core2.png" alt="Оливковое масло Мягкое традиционное 0.5 л"></div>
+                    <h3>Мягкое традиционное 0.5 л</h3>
+                    <p>Базовое нерафинированное масло с мягким вкусом и лёгким ароматом трав.</p>
+                    <div class="product-footer">
+                        <span class="price">₺190</span>
+                        <button onclick="orderProduct('Мягкое традиционное 0.5 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="classic">
+                    <span class="product-tag">Классическая серия, 0.5 л</span>
+                    <div class="product-img"><img src="img/core3.png" alt="Оливковое масло Сиена с пряными травами 0.5 л"></div>
+                    <h3>Сиена с пряными травами 0.5 л</h3>
+                    <p>Компактный формат для кухни с благородными пряными нотками послевкусия.</p>
+                    <div class="product-footer">
+                        <span class="price">₺210</span>
+                        <button onclick="orderProduct('Сиена с пряными травами 0.5 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="classic">
+                    <span class="product-tag">Классическая серия, 0.5 л</span>
+                    <div class="product-img"><img src="img/core4.png" alt="Оливковое масло Зелёный сбор ранний 0.5 л"></div>
+                    <h3>Зелёный сбор ранний 0.5 л</h3>
+                    <p>Масло раннего сбора оливок для изысканных овощных блюд и мягких сыров.</p>
+                    <div class="product-footer">
+                        <span class="price">₺220</span>
+                        <button onclick="orderProduct('Зелёный сбор ранний 0.5 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="family">
+                    <span class="product-tag">Семейный объём, 5 л</span>
+                    <div class="product-img"><img src="img/family1.png" alt="Семейная канистра Ранний урожай 5 л"></div>
+                    <h3>Ранний урожай канистра 5 л</h3>
+                    <p>Большая семейная канистра раннего сбора с надёжной защитой от солнечного света.</p>
+                    <div class="product-footer">
+                        <span class="price">₺690</span>
+                        <button onclick="orderProduct('Ранний урожай канистра 5 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="family">
+                    <span class="product-tag">Семейный объём, 2.5 л</span>
+                    <div class="product-img"><img src="img/family2.png" alt="Оливковое масло Сызма нефильтрованное 2.5 л с ручкой"></div>
+                    <h3>Сызма нефильтрованное 2.5 л</h3>
+                    <p>Удобная бутылка с эргономичной боковой ручкой для комфортного использования.</p>
+                    <div class="product-footer">
+                        <span class="price">₺430</span>
+                        <button onclick="orderProduct('Сызма нефильтрованное 2.5 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="family">
+                    <span class="product-tag">Семейный объём, 3 л</span>
+                    <div class="product-img"><img src="img/family3.png" alt="Оливковое масло Ривьера 3 л в коробке с краном"></div>
+                    <h3>Ривьера в боксе с краном 3 л</h3>
+                    <p>Специальная вакуумная упаковка bag-in-box с дозирующим краном без доступа воздуха.</p>
+                    <div class="product-footer">
+                        <span class="price">₺470</span>
+                        <button onclick="orderProduct('Ривьера в боксе с краном 3 л')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="gift">
+                    <span class="product-tag">Подарочный набор</span>
+                    <div class="product-img"><img src="img/core-set.png" alt="Подарочный набор Дегустационный мини-сет"></div>
+                    <h3>Дегустационный мини-сет</h3>
+                    <p>Коллекция миниатюрных бутылочек для дегустации разных сортов эгейского масла.</p>
+                    <div class="product-footer">
+                        <span class="price">₺350</span>
+                        <button onclick="orderProduct('Дегустационный мини-сет')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="gift">
+                    <span class="product-tag">Подарочный набор</span>
+                    <div class="product-img"><img src="img/gift1.png" alt="Подарочный набор в деревянной шкатулке"></div>
+                    <h3>Набор в деревянной шкатулке</h3>
+                    <p>Премиальный подарочный набор в стильной деревянной коробке ручной работы.</p>
+                    <div class="product-footer">
+                        <span class="price">₺590</span>
+                        <button onclick="orderProduct('Набор в деревянной шкатулке')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="gift">
+                    <span class="product-tag">Подарочный набор</span>
+                    <div class="product-img"><img src="img/gift2.png" alt="Подарочный бокс трёх вкусов"></div>
+                    <h3>Подарочный бокс трёх вкусов</h3>
+                    <p>Изящный подарочный бокс с тремя популярными сортами масла для гурманов.</p>
+                    <div class="product-footer">
+                        <span class="price">₺420</span>
+                        <button onclick="orderProduct('Подарочный бокс трёх вкусов')" type="button">Заказать</button>
+                    </div>
+                </article>
+
+                <article class="card product" data-type="gift">
+                    <span class="product-tag">Премиальный выпуск</span>
+                    <div class="product-img"><img src="img/gift3.png" alt="Подарочная фигурная бутылка Премиальная"></div>
+                    <h3>Премиальная стеклянная бутылка</h3>
+                    <p>Авторская фигурная бутылка с отборным маслом экстра-класса ограниченного тиража.</p>
+                    <div class="product-footer">
+                        <span class="price">₺480</span>
+                        <button onclick="orderProduct('Премиальная стеклянная бутылка')" type="button">Заказать</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-row">
+            <div class="footer-brand">
+                <b>Gold Olive</b>
+                <p>Производство и поставка натурального оливкового масла из региона Измир, Турция. Традиции отжима с 2019 года.</p>
+            </div>
+            <div class="footer-contacts">
+                <p><b>Локация:</b> Измир, Турция</p>
+                <p><b>Электронная почта:</b> info@gold-olive.com</p>
+                <p><b>Телефон отдела заботы:</b> +90 232 000 00 00</p>
+                <p><b>Режим работы:</b> Пн-Пт 9:00-18:00 (TRT)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Gold Olive. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<button id="topBtn" class="to-top" onclick="toTop()" type="button" aria-label="Вернуться в начало страницы"></button>
+<script src="js/main.js"></script>
+
+</body>
+</html>

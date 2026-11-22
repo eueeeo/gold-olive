@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании — Gold Olive (Измир, Турция)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            }
+        } catch (e) {}
+    </script>
+</head>
+<body>
+
+<header>
+    <div class="container header-row">
+        <a class="logo" href="index.html" aria-label="Gold Olive — на главную">
+            Gold Olive
+        </a>
+        
+        <nav id="menu" aria-label="Основная навигация">
+            <a href="index.html">Главная</a>
+            <a href="about.html" class="active">О компании</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="country.html">Турция</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="small-btn" onclick="toggleTheme()" type="button" aria-label="Переключить тему оформления">Тема</button>
+            <button class="small-btn burger" onclick="toggleMenu()" type="button" aria-label="Открыть навигационное меню" aria-expanded="false">Меню</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section>
+        <div class="container">
+            <h1>О компании Gold Olive</h1>
+            <p class="lead">Мы объединили многовековой опыт эгейских оливковых фермеров с бережными современными технологиями отжима, чтобы настоящее масло было доступно на каждой кухне.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container grid-2">
+            <div>
+                <h2>Бережное производство</h2>
+                <p>Наши производственные мощности расположены в непосредственной близости от оливковых рощ Измира. Это позволяет доставлять плоды на пресс в течение 4–6 часов после сбора, предотвращая процесс окисления сырья.</p>
+                <p><b>Холодный отжим:</b> процесс прессования происходит механическим способом без подогрева сырья выше 27°C, благодаря чему масло сохраняет максимальное количество олеиновой кислоты, витаминов E и K.</p>
+                <p><b>Миссия бренда:</b> делать понятное, натуральное масло с предсказуемым качеством без искусственных улучшителей и купажей неизвестного происхождения.</p>
+            </div>
+            <div>
+                <img class="simple-img" src="img/estate_hills.jpg" alt="Оливковые сады и семейная мануфактура Gold Olive на холмах региона Измир">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container grid-2">
+            <article class="card">
+                <h2>История развития</h2>
+                <div class="timeline">
+                    <article>
+                        <b>2019</b><br>
+                        <span>Начало сотрудничества с локальными оливковыми хозяйствами региона Измир и первые тестовые партии масла.</span>
+                    </article>
+                    <article>
+                        <b>2021</b><br>
+                        <span>Запуск собственной автоматизированной линии фильтрации и розлива в стеклянную тару.</span>
+                    </article>
+                    <article>
+                        <b>2023</b><br>
+                        <span>Выпуск подарочных наборов в боксах и канистр семейного формата раннего осеннего сбора.</span>
+                    </article>
+                    <article>
+                        <b>2025</b><br>
+                        <span>Открытие единого онлайн-каталога и системы предварительного заказа продукции.</span>
+                    </article>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2>Лица производства</h2>
+                <p>Люди, которые ежедневно следят за чистотой процессов, свежестью сырья и стандартами каждой выпускаемой бутылки.</p>
+                <div class="people">
+                    <div class="person">
+                        <div class="person-avatar" aria-hidden="true">АД</div>
+                        <b>Айше Демир</b>
+                        <span>главный технолог</span>
+                    </div>
+                    <div class="person">
+                        <div class="person-avatar" aria-hidden="true">МК</div>
+                        <b>Мурат Кая</b>
+                        <span>контроль сырья</span>
+                    </div>
+                    <div class="person">
+                        <div class="person-avatar" aria-hidden="true">ЭЙ</div>
+                        <b>Элиф Йылмаз</b>
+                        <span>контроль качества</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-row">
+            <div class="footer-brand">
+                <b>Gold Olive</b>
+                <p>Производство и поставка натурального оливкового масла из региона Измир, Турция. Традиции отжима с 2019 года.</p>
+            </div>
+            <div class="footer-contacts">
+                <p><b>Локация:</b> Измир, Турция</p>
+                <p><b>Электронная почта:</b> info@gold-olive.com</p>
+                <p><b>Телефон отдела заботы:</b> +90 232 000 00 00</p>
+                <p><b>Режим работы:</b> Пн-Пт 9:00-18:00 (TRT)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Gold Olive. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<button id="topBtn" class="to-top" onclick="toTop()" type="button" aria-label="Вернуться в начало страницы"></button>
+<script src="js/main.js"></script>
+
+</body>
+</html>
